@@ -4,7 +4,6 @@ Back-End stories
 
 1.I created model for adding recipe, book about recipe and contact.
 2.I also created Modelform.
-
 3.There are three functions below, Add function saves in the database recipe entered by users through the Modelform.
 
 def add(request):
@@ -56,3 +55,95 @@ def saved_list(request, recipes_url, id):
     Add_recipe(image=image_url, title=title, cooking_time=cooking_time, serving=serving, ingredient=ingredient, direction=direction).save()
 
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/0940184a-dc21-4402-978d-835b7382f582 width="400" height="300"><img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/602050e8-2eaa-41c4-ac89-82065a6cf117  width="400" height="300">
+
+5.List function shows the recipes' list saved in the database.
+In the list function, users can delete, edit the recipe user choose and link to the detail page if users click the 'title' user choose.
+
+def list(request):
+    recipe = Add_recipe.Add_recipes.all().order_by('pk')
+    content ={'recipe': recipe}
+    return render(request, 'recipes/recipes_list.html', content)
+<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/6af0295f-ad2c-43f0-9872-f417f3034207 width="400" height="300">
+
+6.bs fuction shows the result(popular recipe and link) parsing the url using beautifulsoup. 
+
+def bs(request):
+    url = requests.get("https://www.allrecipes.com/gallery/most-popular-recipes-of-the-year/")
+    soup = BeautifulSoup(url.content, 'html.parser')
+    menus = soup.select('.mntl-sc-block-heading__text')
+    links = soup.select('.mntl-sc-block-universal-featured-link__link.mntl-text-link.button--contained-standard.type--squirrel')
+
+    recipes = []
+    for link in links:
+        link_text = link.attrs['href']
+        recipes.append(link_text)
+
+    menu_name =[]
+    for menu in menus:
+        menu_text =  menu.get_text()
+        menu_name.append(menu_text)
+
+    #convert list to dictionary
+    dict_recipes = dict(zip(menu_name, recipes))
+
+    content = {'dict_recipes' : dict_recipes}
+    return render(request, 'recipes/recipes_bs.html', content)
+<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/b642189b-6e7e-4850-bfd4-00359642401f width="400" height="300"> 
+
+7.Connect the API and get the JSON repose, add in a template for displaying recipe books.
+def create_api(request, id=0):
+
+    response = requests.get("https://www.googleapis.com/books/v1/volumes?q=recipe")
+   
+for count in range(len(number_items)):
+        title = (number_items[count]['volumeInfo']).get("title", 'None')
+        author = (number_items[count]['volumeInfo']).get("authors",['None'])[0]
+        published_date = (number_items[count]['volumeInfo']).get("publishedDate", 'None')
+        recipe_id = i
+        titles.append(title)
+        authors.append(author)
+        published_dates.append(published_date)
+        recipe_ids.append(i)
+        i= i+1
+
+    for j in range(len(number_items)):
+        book = [recipe_ids[j], titles[j],authors[j],published_dates[j]]
+        books.append(book)
+    content ={'books': books}
+    if id==0:
+        return render(request, 'recipes/recipes_create_api.html',content)
+    else:
+        return save_api(request, id, recipe_ids[id-1], titles[id-1],authors[id-1],published_dates[id-1])
+
+8.save_api function save API result in the database.
+def save_api(request, id, number, title, author, published_date):
+    print(number, title, author, published_date)
+    Recipebook(number=number, title=title,author=author,  published_date=published_date).save()
+
+    return redirect('recipes_saved_result_api')
+<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/12753b11-7abb-4b03-8962-e36f5f76dcb7) width="400" height="300">
+
+9.9.-JavaSCript- get_favorite_recipe function moves to the favorite recipe box, if users click the heart button in home.html. Additional when users click the text in the favorite box, it also links to recipe's detail page.(No duplication addition with same recipe even though clicks two time with same recipe.)
+
+function get_favorite_Recipe(clicked_value){
+     var text="";
+     recipes.push(clicked_value);
+     for(var i=0; i<recipes.length; i++){
+        var text1 =  recipes[i];
+
+        for(var j=i+1; j<recipes.length; j++){
+            if(text1 === recipes[j]){
+                recipes.splice(i, 1);
+                break;
+            }
+        }
+
+     }
+     for (var i in recipes){
+             text += '<a style="color:#fff;" href="http://127.0.0.1:8000/Recipes/' + recipes[i] + '/">'+ recipes[i]+'</a><br>';
+     }
+
+     document.getElementById('favorite_recipe').innerHTML= '<h4 style="color:purple; text-align:left;">&#x2764;favorite recipe</h4>'+'<br>' +'<h5>' + text +'</h5>'+'<br>';
+
+<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/0480e4cc-029e-4b62-87df-cc4f3476b6da width="400" height="300">
+    
