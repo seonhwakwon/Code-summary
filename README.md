@@ -55,4 +55,5 @@ def saved_list(request, recipes_url, id):
 
     Add_recipe(image=image_url, title=title, cooking_time=cooking_time, serving=serving, ingredient=ingredient, direction=direction).save()
 
-    <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/0940184a-dc21-4402-978d-835b7382f582 width="400" height="300"><img src =https://github.com/seonhwakwon/Code-summary/assets/148311845/602050e8-2eaa-41c4-ac89-82065a6cf117  width="400" height="300">
+    <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/0940184a-dc21-4402-978d-835b7382f582 width="400" height="300">
+    <img src =https://github.com/seonhwakwon/Code-summary/assets/148311845/602050e8-2eaa-41c4-ac89-82065a6cf117  width="400" height="300">
