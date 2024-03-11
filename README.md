@@ -159,8 +159,8 @@ def saved_result_api(request):
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/d28e1e61-9584-4e57-b6f5-7fca4343586d width="500" height="300">
 <br><br>
 
-### Javascript
-9. Get_favorite_recipe function moves to the favorite recipe box, if users click the heart button in home.html. Additional when users click the text in the favorite box, it also links to recipe's detail page.(No duplication addition with same recipe even though clicks two time with same recipe.)
+
+9. (Javascript) Get_favorite_recipe function moves to the favorite recipe box, if users click the heart button in home.html. Additional when users click the text in the favorite box, it also links to recipe's detail page.(No duplication addition with same recipe even though clicks two time with same recipe.)
 
 ``` JavaScript
 function get_favorite_Recipe(clicked_value){
@@ -188,7 +188,7 @@ function get_favorite_Recipe(clicked_value){
 <br><br> 
 
 
-## #Front End stories
+## Front End stories
 
 1.This template file display saved result of API(Recipe book) in the database.
 All display templates that display the result are similar with below template.
