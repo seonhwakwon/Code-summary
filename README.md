@@ -72,7 +72,7 @@ def saved_list(request, recipes_url, id):
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/0940184a-dc21-4402-978d-835b7382f582 width="400" height="300"><img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/602050e8-2eaa-41c4-ac89-82065a6cf117  width="400" height="300">
 
 <br><br>
-5.List function shows the recipes's list already saved in the database.
+5. List function shows the recipes's list already saved in the database.
 In the list function, users can delete, edit the recipe user choose and link to the detail page if users click the 'title' user choose.
 
 ```python
@@ -85,7 +85,7 @@ def list(request):
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/6af0295f-ad2c-43f0-9872-f417f3034207 width="400" height="300">
 <br><br>
 
-6.Bs(beautiful soup) fuction parsing the url and dispaly the result(popular recipes and links).
+6. Bs(beautiful soup) fuction parsing the url and dispaly the result(popular recipes and links).
 
 ```python
 def bs(request):
@@ -113,7 +113,7 @@ def bs(request):
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/b642189b-6e7e-4850-bfd4-00359642401f width="400" height="300"> 
 <br><br>
 
-7.Connect the API, get the JSON repose, parse the Jason and add in a template for displaying recipe books.
+7. Connect the API, get the JSON repose, parse the Jason and add in a template for displaying recipe books.
 ```python
 def create_api(request, id=0):
 
@@ -141,7 +141,7 @@ def create_api(request, id=0):
 ```
 <br><br>
 
-8.save_api function save API result in the database if users clicks the save button, and display the result in template.
+8. Save_api function save API result in the database if users clicks the save button, and display the result in template.
 
 ```python
 def save_api(request, id, number, title, author, published_date):
@@ -160,7 +160,7 @@ def saved_result_api(request):
 <br><br>
 
 ### Javascript
-9.Get_favorite_recipe function moves to the favorite recipe box, if users click the heart button in home.html. Additional when users click the text in the favorite box, it also links to recipe's detail page.(No duplication addition with same recipe even though clicks two time with same recipe.)
+9. Get_favorite_recipe function moves to the favorite recipe box, if users click the heart button in home.html. Additional when users click the text in the favorite box, it also links to recipe's detail page.(No duplication addition with same recipe even though clicks two time with same recipe.)
 
 ``` JavaScript
 function get_favorite_Recipe(clicked_value){
