@@ -1,11 +1,23 @@
-# Code-summary
+# Live project(Code Summary)
 
-Back-End stories
--Python
-1.I created model for adding recipe, book about recipe and contact.<br>
-2.I also created Modelform.
-3.There are three functions below, Add function saves in the database recipe entered by users through the Modelform.
-'''python
+
+# Introduction
+
+For the last two weeks, I worked as a team in the Tech Academy  through Azure Devops.<br> 
+I created "Recipe" apps designed to take advantage of various Python and Django features and <br> 
+databases to keep track of data, interact with APIs to retrieve data, use data scraping(beautiful soup)<br> 
+to collect and aggregate data using Python, Django, SQLite, and JavaScript, and HTML/CSS. <br> 
+
+
+
+
+## Back End stories
+
+1. I created model for adding recipe, recipe books and contact.
+2. I also created Modelform.
+3. Add function saves in the database recipe entered by users through the Modelform.
+
+```python
 def add(request):
     if request.method == "POST":
         form = Add_recipeForm(request.POST)
@@ -17,11 +29,13 @@ def add(request):
 
     content = {'form': form}
     return render(request, 'recipes/recipes_add.html', content)
-'''
+```
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/8155f171-7922-4b33-95e2-8c388d068f63 width="400" height="300">
-
-4.saved_list function also saves in the database that my app main page's recipes, if the user wants.
-'''python
+<br><br>
+  
+4. Saved_list function saves main page's recipes in the database , if the user clicks button(save in recipe list).
+   
+```python
 def saved_list(request, recipes_url, id):
     title_list =[]
     cooking_time_serving_list =[]
@@ -54,21 +68,26 @@ def saved_list(request, recipes_url, id):
     ingredient = ingredient_list[2]
 
     Add_recipe(image=image_url, title=title, cooking_time=cooking_time, serving=serving, ingredient=ingredient, direction=direction).save()
-'''
+```
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/0940184a-dc21-4402-978d-835b7382f582 width="400" height="300"><img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/602050e8-2eaa-41c4-ac89-82065a6cf117  width="400" height="300">
 
-5.List function shows the recipes's list saved in the database.
+<br><br>
+5.List function shows the recipes's list already saved in the database.
 In the list function, users can delete, edit the recipe user choose and link to the detail page if users click the 'title' user choose.
-'''python
+
+```python
 def list(request):
     recipe = Add_recipe.Add_recipes.all().order_by('pk')
     content ={'recipe': recipe}
     return render(request, 'recipes/recipes_list.html', content)
-'''
-<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/6af0295f-ad2c-43f0-9872-f417f3034207 width="400" height="300">
+```
 
-6.bs fuction shows the result(popular recipe and link) parsing the url using beautifulsoup. 
-''''''python
+<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/6af0295f-ad2c-43f0-9872-f417f3034207 width="400" height="300">
+<br><br>
+
+6.Bs(beautiful soup) fuction parsing the url and dispaly the result(popular recipes and links).
+
+```python
 def bs(request):
     url = requests.get("https://www.allrecipes.com/gallery/most-popular-recipes-of-the-year/")
     soup = BeautifulSoup(url.content, 'html.parser')
@@ -90,16 +109,17 @@ def bs(request):
 
     content = {'dict_recipes' : dict_recipes}
     return render(request, 'recipes/recipes_bs.html', content)
-'''    
+```   
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/b642189b-6e7e-4850-bfd4-00359642401f width="400" height="300"> 
+<br><br>
 
-7.Connect the API and get the JSON repose, add in a template for displaying recipe books.
-'''python
+7.Connect the API, get the JSON repose, parse the Jason and add in a template for displaying recipe books.
+```python
 def create_api(request, id=0):
 
     response = requests.get("https://www.googleapis.com/books/v1/volumes?q=recipe")
    
-for count in range(len(number_items)):
+    for count in range(len(number_items)):
         title = (number_items[count]['volumeInfo']).get("title", 'None')
         author = (number_items[count]['volumeInfo']).get("authors",['None'])[0]
         published_date = (number_items[count]['volumeInfo']).get("publishedDate", 'None')
@@ -118,17 +138,31 @@ for count in range(len(number_items)):
         return render(request, 'recipes/recipes_create_api.html',content)
     else:
         return save_api(request, id, recipe_ids[id-1], titles[id-1],authors[id-1],published_dates[id-1])
-'''
-8.save_api function save API result in the database.
+```
+<br><br>
+
+8.save_api function save API result in the database if users clicks the save button, and display the result in template.
+
+```python
 def save_api(request, id, number, title, author, published_date):
     print(number, title, author, published_date)
     Recipebook(number=number, title=title,author=author,  published_date=published_date).save()
 
     return redirect('recipes_saved_result_api')
-<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/12753b11-7abb-4b03-8962-e36f5f76dcb7) width="400" height="300">
 
-9.-JavaSCript- get_favorite_recipe function moves to the favorite recipe box, if users click the heart button in home.html. Additional when users click the text in the favorite box, it also links to recipe's detail page.(No duplication addition with same recipe even though clicks two time with same recipe.)
-''' JavaScript
+def saved_result_api(request):
+    saved_menus = Recipebook.Recipebooks.all()
+    content = {'saved_menus': saved_menus}
+
+    return render(request, 'recipes/recipes_saved_result_api.html',content )
+```
+<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/d28e1e61-9584-4e57-b6f5-7fca4343586d width="500" height="300">
+<br><br>
+
+### Javascript
+9.Get_favorite_recipe function moves to the favorite recipe box, if users click the heart button in home.html. Additional when users click the text in the favorite box, it also links to recipe's detail page.(No duplication addition with same recipe even though clicks two time with same recipe.)
+
+``` JavaScript
 function get_favorite_Recipe(clicked_value){
      var text="";
      recipes.push(clicked_value);
@@ -148,13 +182,18 @@ function get_favorite_Recipe(clicked_value){
      }
 
      document.getElementById('favorite_recipe').innerHTML= '<h4 style="color:purple; text-align:left;">&#x2764;favorite recipe</h4>'+'<br>' +'<h5>' + text +'</h5>'+'<br>';
-'''
-<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/0480e4cc-029e-4b62-87df-cc4f3476b6da width="400" height="300">
-    
-Front-End stories
-1.This template file is saved a result of API(Recipe book).
+```
+<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/0480e4cc-029e-4b62-87df-cc4f3476b6da width="300" height="300">
+
+<br><br> 
+
+
+## #Front End stories
+
+1.This template file display saved result of API(Recipe book) in the database.
 All display templates that display the result are similar with below template.
 
+```html
 {{% extends 'recipes_base.html' %}
 {% load static %}
 
@@ -180,9 +219,12 @@ All display templates that display the result are similar with below template.
     </table>
 </div>
 {% endblock %}
-
-2.This template is contact template using form.
+```
+<br><br>
+2. This template display contact template using form.
 All of the templates using form are similar with below template. 
+
+```html
 {% extends 'recipes_base.html' %}
 {% load static %}
 
@@ -204,13 +246,23 @@ All of the templates using form are similar with below template.
     </div>
 </div>
 {% endblock %}
+```
+<br><br>
 
-3.Using CSS.
--Hover_effect in image
-<img src = https://github.com/seonhwakwon/Code-summary/assets/148311845/e745b3f6-7af9-4b6d-aa56-ec214c1111cc width="200" hegith="100">
--Hover_effect in Navbar
-<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/3604e60f-b7d2-4798-ba5b-3e22413c5903 width="200" hegith="100">
--footer
-<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/2d28dbc7-9e4e-4345-a00d-c7ea546dc5a0 width="200" hegith="100">
--button
-<img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/5d280abd-0076-4008-9b8b-ad86508d85a7 width="200" hegith="100">
+3. Using CSS.
+<br>
+
+- Hover_effect in Navbar(underline)<br>
+    <img src = https://github.com/seonhwakwon/Code-summary/assets/148311845/e745b3f6-7af9-4b6d-aa56-ec214c1111cc width="400" hegith="300">
+    <br>
+    
+- Hover_effect in image<br>
+    <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/1c8b1f5a-c4a8-4ec8-bdc6-fa190104b474 width="400" hegith="100">
+    <br>
+    
+- footer<br>
+    <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/2d28dbc7-9e4e-4345-a00d-c7ea546dc5a0 width="400" hegith="300">
+    <br>
+    
+- button<br>
+    <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/5d280abd-0076-4008-9b8b-ad86508d85a7 width="100" hegith="100">
