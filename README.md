@@ -21,6 +21,7 @@ def add(request):
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/8155f171-7922-4b33-95e2-8c388d068f63 width="400" height="300">
 
 4.saved_list function also saves in the database that my app main page's recipes, if the user wants.
+
 def saved_list(request, recipes_url, id):
     title_list =[]
     cooking_time_serving_list =[]
@@ -56,7 +57,7 @@ def saved_list(request, recipes_url, id):
 
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/0940184a-dc21-4402-978d-835b7382f582 width="400" height="300"><img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/602050e8-2eaa-41c4-ac89-82065a6cf117  width="400" height="300">
 
-5.List function shows the recipes' list saved in the database.
+5.List function shows the recipes's list saved in the database.
 In the list function, users can delete, edit the recipe user choose and link to the detail page if users click the 'title' user choose.
 
 def list(request):
@@ -123,7 +124,7 @@ def save_api(request, id, number, title, author, published_date):
     return redirect('recipes_saved_result_api')
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/12753b11-7abb-4b03-8962-e36f5f76dcb7) width="400" height="300">
 
-9.9.-JavaSCript- get_favorite_recipe function moves to the favorite recipe box, if users click the heart button in home.html. Additional when users click the text in the favorite box, it also links to recipe's detail page.(No duplication addition with same recipe even though clicks two time with same recipe.)
+9.-JavaSCript- get_favorite_recipe function moves to the favorite recipe box, if users click the heart button in home.html. Additional when users click the text in the favorite box, it also links to recipe's detail page.(No duplication addition with same recipe even though clicks two time with same recipe.)
 
 function get_favorite_Recipe(clicked_value){
      var text="";
@@ -147,3 +148,60 @@ function get_favorite_Recipe(clicked_value){
 
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/0480e4cc-029e-4b62-87df-cc4f3476b6da width="400" height="300">
     
+Front-End stories
+1.This template file is saved a result of API(Recipe book).
+All display templates that display the result are similar with below template.
+
+{{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+<div class="container">
+    <table style="width:100%;">
+        <tr>
+            <th>     </th>
+            <th>Title</th>
+            <th>Author </th>
+            <th>Published Date</th>
+        </tr>
+        {%for saved_menu in saved_menus %}
+        <tr>
+            <td>{{saved_menu.number}}</td>
+            <td>{{saved_menu.title}}</td>
+            <td>{{saved_menu.author}} </td>
+            <td>{{saved_menu.published_date}}</td>
+            <td><a href="{% url 'recipes_delete_api' saved_menu.id %}"><button>delete</button></a></td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+{% endblock %}
+
+2.This template is contact template using form.
+All of the templates using form are similar with below template. 
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Contact Us</h1>
+    <div id ="Contact">
+            <div class="form-popup" id="myForm">
+            <form method="POST" class="form-container">
+                {% csrf_token %}
+                name : {{form.name}}
+                phone : {{form.phone}}
+                e-mail : {{form.email}}
+                message :<br> {{form.message}}
+                <button type="submit" style="float:right;">SUBMIT</button>
+             </form>
+            </div>
+    </div>
+</div>
+{% endblock %}
+
+3.Using css.
+-Hover_effect in image
+<img src = https://github.com/seonhwakwon/Code-summary/assets/148311845/e745b3f6-7af9-4b6d-aa56-ec214c1111cc width="200" hegith="100">
