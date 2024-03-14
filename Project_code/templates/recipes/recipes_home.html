@@ -1,0 +1,78 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<div id="favorite_recipe">
+    <h4 style="color:purple;">Click the heart button &#x2764; each recipe.</h4>
+</div>
+<div class="container">
+    <div class="hover_img">
+        <h1>MEAT</h1>
+        <div class="row">
+            <div class="col-sm">
+                <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Coconut_salmon_curry">&#x2764;</button>
+                <img class="img_fluid" src="{% static '/images/coconut_miso_salmon_curry.jpg'%}" alt="Coconut_salmon_curry" width="185px" height="273px" style="width:100%"><a href="{% url 'recipes_coconut' %}"><h4>Coconut salmon curry</h4></a>
+            </div>
+            <div class="col-sm">
+                <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Shrimp_tacos">&#x2764;</button>
+                <img class="img_fluid" src="{% static '/images/shrimp_tacos.jpg'%}" alt="Shrimp_tacos" width="185px" height="273px" style="width:100%"><a href="{% url 'recipes_shrimp_tacos' %}"><h4>Shrimp tacos</h4></a>
+            </div>
+            <div class="col-sm">
+                <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Chicken_miso_soup">&#x2764;</button>
+                <img class="img_fluid" src="{% static '/images/chicken_miso_soup.jpg'%}" alt="Chicken_miso_soup" width="185px" height="273px" style="width:100%"><a href="{% url 'recipes_chicken_miso_soup' %}"><h4>Chicken miso soup</h4></a>
+            </div>
+        </div>
+        <br>
+        <h1>VEGITABLE</h1>
+        <div class="row">
+            <div class="col-sm">
+                <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Asparagus_soup">&#x2764;</button>
+                <img class="img_fluid" src="{% static '/images/asparagus_soup.jpg'%}" alt="Asparagus_soup" width="185px" height="273px" style="width:100%"><a href="{% url 'recipes_asparagus_soup' %}"><h4>Asparagus soup</h4></a>
+            </div>
+            <div class="col-sm">
+                 <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Zucchini_salad">&#x2764;</button>
+                 <img class="img_fluid" src="{% static '/images/zucchini_salad.jpg'%}" alt="Zucchini_salad" width="185px" height="273px"style="width:100%"><a href="{% url 'recipes_zucchini_salad' %}"><h4>Zucchini Salad</h4></a>
+            </div>
+            <div class="col-sm">
+                 <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Cabbage_stir_fry">&#x2764;</button>
+                 <img class="img_fluid" src="{% static '/images/tofu_and_cabbage_stir_fry.jpg'%}" alt="Cabbage_stir_fry" width="185px" height="273px"style="width:100%"><a href="{% url 'recipes_cabbage_stir_fry' %}"><h4>Cabbage stir fry</h4></a>
+            </div>
+        </div>
+         <br>
+        <h1>Dessert</h1>
+         <div class="row">
+             <div class="col-sm">
+                 <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Cranberry_tart">&#x2764;</button>
+                 <img class="img_fluid" src="{% static '/images/cranberry_cheesecake_tart.jpg'%}" alt="Cranberry_tart" width="185px" height="273px" style="width:100%"><a href="{% url 'recipes_cranberry_tart' %}"><h4>Cranberry tart</h4></a>
+             </div>
+             <div class="col-sm">
+                 <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Sugar_cookie">&#x2764;</button>
+                 <img class="img_fluid" src="{% static '/images/sugar_cookies.jpg'%}" alt="Sugar_cookie" width="185px" height="273px"style="width:100%"><a href="{% url 'recipes_sugar_cookie' %}"><h4>Sugar cookie</h4></a>
+             </div>
+             <div class="col-sm">
+                <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Orange_cake">&#x2764;</button>
+                <img class="img_fluid" src="{% static '/images/orange_cake.jpg'%}" alt="Orange_cake" width="185px" height="273px"style="width:100%"><a href="{% url 'recipes_orange_cake' %}"><h4>Orange cake</h4></a>
+             </div>
+         </div>
+         <br>
+         <h1>Drink</h1>
+         <div class="row">
+             <div class="col-sm">
+                  <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Strawberry_matcha_latte">&#x2764;</button>
+                  <img class="img_fluid" src="{% static '/images/strawberry_matcha_latte.jpg'%}" alt="Strawberry_matcha_latte" width="185px" height="273px" style="width:100%"><a href="{% url 'recipes_strawberry_matcha_latte' %}"><h4>Strawberry matcha latte</h4></a>
+             </div>
+             <div class="col-sm">
+                 <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Lemonade">&#x2764;</button>
+                 <img class="img_fluid" src="{% static '/images/lemonade.jpg'%}" alt="Lemonade" width="185px" height="273px"style="width:100%"><a href="{% url 'recipes_lemonade' %}"><h4>Lemonade</h4></a>
+             </div>
+             <div class="col-sm">
+                  <button style="background-color:#fff; border:#fff;" class="like" type="button" onclick="get_favorite_Recipe(this.value)" value="Cucumber_and_tonic">&#x2764;</button>
+                  <img class="img_fluid" src="{% static '/images/cucumber_and_tonic.jpg'%}" alt="Cucumber_and_tonic" width="185px" height="273px"style="width:100%"><a href="{% url 'recipes_cucumber_and_tonic' %}"><h4>Cucumber and tonic</h4></a>
+             </div>
+         </div>
+    </div>
+</div>
+
+
+{% endblock %}

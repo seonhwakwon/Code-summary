@@ -1,0 +1,21 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Contact Us</h1>
+    <div id ="Contact">
+            <div class="form-popup" id="myForm">
+            <form method="POST" class="form-container">
+                {% csrf_token %}
+                name : {{form.name}}
+                phone : {{form.phone}}
+                e-mail : {{form.email}}
+                message :<br> {{form.message}}
+                <button type="submit" style="float:right;">SUBMIT</button>
+             </form>
+            </div>
+    </div>
+</div>
+{% endblock %}

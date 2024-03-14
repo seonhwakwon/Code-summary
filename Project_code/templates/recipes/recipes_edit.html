@@ -1,0 +1,18 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Add Recipes{% endblock %}
+{% block content %}
+
+<div class ="container">
+    <h1>EDIT RECIPES  </h1>
+    <div class="form-container">
+        <form action ="{% url 'recipes_edit' recipe.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn">SUBMIT</button>
+            {{form}}
+        </form>
+    </div>
+</div>
+
+{% endblock %}

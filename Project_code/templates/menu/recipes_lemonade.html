@@ -1,0 +1,54 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<h1>Lemonade</h1>
+<div class="container">
+    <div class="row">
+        <img  class="img_fluid" src="{% static '/images/lemonade.jpg'%}" alt="lemonade" style="width:100%; height:500px;">
+    </div>
+    <br>
+    <div class="row">
+      <table>
+          <tr>
+              <th>Cooking time: 10minutes </th>
+              <th>serving: 6</th>
+          </tr>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+         <h1 style="text-align:left; text-decoration: underline;">*Ingredient*</h1>
+        <ul>
+
+            <li><h5>1 cup sugar </h5></li>
+            <li><h5>1 cup water</h5></li>
+            <li><h5>1 cup freshly squeezed lemon juice</h5></li>
+            <li><h5>2 to 3 cups cold water, to dilute</h5></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <h1 style="text-align:left; text-decoration: underline;">*Direction*</h1>
+        <br><br>
+        <ul>
+           <li><h5>Step1 :Place the sugar and water in a small saucepan and bring to a simmer. Stir so that the sugar
+               dissolves completely and remove from heat.</h5></li><br>
+
+           <li><h5>Step2 :While the water is heating for the simple syrup, juice your lemons. Depending on the size
+               of the lemons, 4 to 6 of them should be enough for 1 cup of juice.</h5></li><br>
+
+           <li><h5>Step3: Pour the juice and the simple syrup sugar water into a serving pitcher.
+               Add 2 to 3 cups of cold water and taste. Add more water if you would like it to be more diluted</h5></li><br>
+        </ul>
+    </div>
+    <div class="row" >
+        <a href="{% url 'parsing_recipe' 10 %}"><button style="float:right;">Save in recipe list</button></a>
+    </div>
+
+</div>
+
+{% endblock %}

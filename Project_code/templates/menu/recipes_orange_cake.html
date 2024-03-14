@@ -1,0 +1,70 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<h1>Orange cake</h1>
+<div class="container">
+    <div class="row">
+        <img  class="img_fluid" src="{% static '/images/orange_cake.jpg'%}" alt="Orange cake" style="width:100%; height:500px;">
+    </div>
+    <br>
+    <div class="row">
+      <table>
+          <tr>
+              <th>Cooking time: 1hour20minutes </th>
+              <th>serving: 2 loaf</th>
+          </tr>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+         <h1 style="text-align:left; text-decoration: underline;">*Ingredient*</h1>
+        <ul>
+
+            <li><h5>2 ½ cups (350g) all-purpose flour, sifted</h5></li>
+            <li><h5>2 ½ teaspoons baking powder</h5></li>
+            <li><h5>4 large eggs</h5></li>
+            <li><h5>1 ½ cups (300g) granulated sugar</h5></li>
+            <li><h5>1 cup (240 ml) canola or vegetable oil</h5></li>
+            <li><h5>1 ¼ cups (300 ml) freshly squeezed orange juice</h5></li>
+            <li><h5>Orange zest from 3-4 oranges (I use the same amount of oranges I use for the juice)</h5></li>
+            <li><h5>1 teaspoon pure vanilla extract</h5></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <h1 style="text-align:left; text-decoration: underline;">*Direction*</h1>
+        <br><br>
+        <ul>
+           <li><h5>Step1 :Preheat oven to 350°F/180°C. Grease a 12-cup (10-inch) Bundt pan or two standard loaf pans
+               (either 9 x 13 inch pans or 8½ x 4½ inch pans for taller cakes) and set aside.</h5></li><br>
+
+           <li><h5>Step2 :In a medium bowl whisk together flour and baking powder. Set aside.</h5></li><br>
+
+           <li><h5>Step3: Using an electric mixer fitted with the whisk attachment or a handheld mixer, whisk together eggs
+               and sugar on high speed until pale and fluffy, about 5 minutes. On low speed and with the mixer running,
+               add oil slowly until combined. Add orange juice, zest, and vanilla extract and keep whisking slowly
+               until combined. Add flour mixture and whisk just until combined. Don’t overmix.</h5></li><br>
+
+            <li><h5>Step4: Pour batter into prepared pan/pans. Bake for 50-60 minutes for the bundt pan or 40-50 minutes
+                for the loaves or until a toothpick inserted into the center of the cake comes out clean.
+                If the top is browning quickly while baking, cover loosely with aluminum foil. Allow cake/cakes
+                to cool completely on a wire rack.</h5></li><br>
+
+            <li><h5>Step5:Store cake in an airtight container in the refrigerator for up to 5 days. For the best moist texture,
+                the cake is best served at room temperature. This cake freezes well so if you make two loaves, cover well,
+                and freeze one of them in the freezer for up to 2 months, then thaw overnight in the fridge</h5></li><br>
+
+        </ul>
+    </div>
+     <div class="row" >
+        <a href="{% url 'parsing_recipe' 8 %}"><button style="float:right;">Save in recipe list</button></a>
+    </div>
+
+
+</div>
+
+{% endblock %}

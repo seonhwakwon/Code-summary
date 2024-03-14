@@ -1,0 +1,65 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<h1>Zucchini Salad</h1>
+<div class="container">
+    <div class="row">
+        <img  class="img_fluid" src="{% static '/images/zucchini_salad.jpg'%}" alt="Zucchini salad" style="width:100%; height:500px;">
+    </div>
+    <br>
+    <div class="row">
+      <table>
+          <tr>
+              <th>Cooking time: 30minutes </th>
+              <th>serving: 8</th>
+          </tr>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+
+         <h1 style="text-align:left; text-decoration: underline;">*Ingredient*</h1>
+        <ul>
+
+            <li><h5>1 medium zucchini and cucumber and carrots</h5></li>
+            <li><h5>3 medium oranges</h5></li>
+            <li><h5>3 cups fresh baby spinach</h5></li>
+            <li><h5>4 green onions, finely chopped</h5></li>
+            <li><h5>1/2 cup chopped walnuts and 1/2 teaspoon salt and pepper </h5></li>
+            <li><h5>1/2 cup golden raisins</h5></li>
+            <li><h5>1/4 cup olive oil</h5></li>
+            <li><h5>4 teaspoons white wine vinegar</h5></li>
+            <li><h5>1 tablespoon finely chopped green onion</h5></li>
+            <li><h5>2 teaspoons honey</h5></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <h1 style="text-align:left; text-decoration: underline;">*Direction*</h1>
+        <br><br>
+        <ul>
+           <li><h5>Step1 :Using a vegetable peeler, shave zucchini, cucumber and carrot lengthwise into very thin strips.</h5></li><br>
+
+           <li><h5>Step2 :Finely grate enough zest from oranges to measure 2 tablespoons. Cut 1 orange crosswise in half;
+               squeeze juice from orange to measure 1/2 cup. Reserve zest and juice for vinaigrette. Cut a thin slice
+               from the top and bottom of remaining oranges; stand oranges upright on a cutting board. With a knife,
+               cut off peel and outer membrane from orange. Cut along the membrane of each segment to remove fruit.</h5></li><br>
+
+           <li><h5>Step3:In a large bowl, combine spinach, orange sections, green onions, walnuts, salt, pepper and,
+               if desired, raisins. Add vegetable ribbons; gently toss to combine. In a small bowl, combine vinaigrette
+               ingredients. Add reserved orange zest and juice; whisk until blended. Drizzle half of the vinaigrette
+               over salad; toss to coat. Serve with remaining vinaigrette. </h5></li><br>
+
+        </ul>
+    </div>
+    <div class="row" >
+        <a href="{% url 'parsing_recipe' 4 %}"><button style="float:right;">Save in recipe list</button></a>
+    </div>
+
+</div>
+
+{% endblock %}

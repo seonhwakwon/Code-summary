@@ -1,0 +1,82 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<h1>Cabbage stir fry</h1>
+<div class="container">
+    <div class="row">
+        <img  class="img_fluid" src="{% static '/images/tofu_and_cabbage_stir_fry.jpg'%}" alt="Cabbage stir fry" style="width:100%; height:500px;">
+    </div>
+    <br>
+    <div class="row">
+      <table>
+          <tr>
+              <th>Cooking time: 30 </th>
+              <th>serving: 6</th>
+          </tr>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+         <h1 style="text-align:left; text-decoration: underline;">*Ingredient*</h1>
+        <ul>
+
+            <li><h5>16 oz firm or extra firm tofu</h5></li>
+            <li><h5>1/2 medium cabbage</h5></li>
+            <li><h5>3-4 small to medium potatoes We use Yukon gold</h5></li>
+            <li><h5>1/2 teaspoon garlic powder</h5></li>
+            <li><h5>salt and pepper</h5></li>
+            <li><h5>3 garlic cloves, minced</h5></li>
+            <li><h5>2-3 tbsp neutral high heat oil</h5></li>
+            <li><h5>5 Minute Maple Dijon Sauce link in notes</h5></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <h1 style="text-align:left; text-decoration: underline;">*Direction*</h1>
+        <br><br>
+        <ul>
+           <li><h5>Step1 :Prepare 5 Minute Maple Dijon Sauce and refrigerate until needed. Recipe is linked in the notes
+               at the bottom.</h5></li><br>
+
+           <li><h5>Step2 :If you are using tofu that is in water, drain and place on a lint free towel.
+               Place another towel on top and place something heavy on top for 15 to 20 minutes to remove as much water as possible. </h5></li><br>
+
+           <li><h5>Step3:While pressing the tofu, slice the cabbage into very thin strips and set aside.</h5></li><br>
+
+            <li><h5>Step4: Dice potatoes into small squares about 1/4 inch in size. To keep potatoes from oxidizing while
+                you finish prepping submerge in a bowl of water until ready to use.</h5></li><br>
+
+            <li><h5>Step5: After tofu has pressed, cut into ½ inch cubes and transfer to a bowl. Sprinkle with garlic powder,
+                salt and pepper. Toss to coat evenly.</h5></li><br>
+
+            <li><h5>Step6:Heat 1 tablespoon oil in a wok or skillet over medium heat. Add tofu to wok/skillet
+                in a single layer. Don't overcrowd the pan, split into 2 batches if needed.</h5></li><br>
+
+            <li><h5>Step7:Allow to cook undisturbed for 2-3 minutes until golden. Flip and continue to brown on all sides.
+                Remove the pan and set aside.</h5></li><br>
+
+            <li><h5>Step8:Wipe out wok/skillet if needed and add 1 tablespoon oil heating over medium. Add diced potatoes,
+                toss to coat in oil and sprinkle with a pinch of salt and pepper. Cook for about 5 minutes stirring
+                occasionally until potatoes begin to brown. Cover wok/skillet with a lid and continue cooking for 15-20 minutes
+                longer or until potatoes are tender. Turn the heat down as needed to prevent potatoes from burning on the outside
+                before the centers are cooked through.</h5></li><br>
+
+            <li><h5>Step9:After potatoes are cooked through add cabbage, a pinch of salt, pepper and minced garlic.</h5></li><br>
+
+            <li><h5>Step10:Sauté until cabbage is wilted and softened, about 5 minutes.</h5></li><br>
+
+            <li><h5>Step11:Add tofu to cabbage and potatoes and toss to incorporate. Drizzle desired amount of
+                maple dijon sauce and combine. Heat though for 1-2 minutes.</h5></li><br>
+        </ul>
+    </div>
+     <div class="row" >
+        <a href="{% url 'parsing_recipe' 5 %}"><button style="float:right;">Save in recipe list</button></a>
+    </div>
+
+</div>
+
+{% endblock %}

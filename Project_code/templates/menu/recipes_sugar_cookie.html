@@ -1,0 +1,66 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<h1>Sugar cookie</h1>
+<div class="container">
+    <div class="row">
+        <img  class="img_fluid" src="{% static '/images/sugar_cookies.jpg'%}" alt="Sugar cookie" style="width:100%; height:500px;">
+    </div>
+    <br>
+    <div class="row">
+      <table>
+          <tr>
+              <th>Cooking time: 2hours24minutes </th>
+              <th>serving: 3dozens</th>
+          </tr>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+         <h1 style="text-align:left; text-decoration: underline;">*Ingredient*</h1>
+        <ul>
+
+            <li><h5>3 cups all-purpose flour</h5></li>
+            <li><h5>3/4 teaspoon baking powder</h5></li>
+            <li><h5>1/4 teaspoon salt</h5></li>
+            <li><h5>1 cup unsalted butter, softened</h5></li>
+            <li><h5>1 cup sugar</h5></li>
+            <li><h5>1 egg, beaten</h5></li>
+            <li><h5>1 tablespoon milk</h5></li>
+            <li><h5>Powdered sugar, for rolling out dough</h5></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <h1 style="text-align:left; text-decoration: underline;">*Direction*</h1>
+        <br><br>
+        <ul>
+           <li><h5>Step1 :Sift together flour, baking powder, and salt. Set aside. Place butter and sugar in large bowl
+               of electric stand mixer and beat until light in color. Add egg and milk and beat to combine.
+               Put mixer on low speed, gradually add flour, and beat until mixture pulls away from the side of the bowl.
+               Divide the dough in half, wrap in waxed paper, and refrigerate for 2 hours.</h5></li><br>
+
+           <li><h5>Step2 :Preheat oven to 375 degrees F.</h5></li><br>
+
+           <li><h5>Step3:Sprinkle surface where you will roll out dough with powdered sugar. Remove 1 wrapped pack of dough
+               from refrigerator at a time, sprinkle rolling pin with powdered sugar, and roll out dough to 1/4-inch thick.
+               Move the dough around and check underneath frequently to make sure it is not sticking. If dough has warmed during rolling,
+               place cold cookie sheet on top for 10 minutes to chill. Cut into desired shape, place at least 1-inch apart
+               on greased baking sheet, parchment, or silicone baking mat, and bake for 7 to 9 minutes or
+               until cookies are just beginning to turn brown around the edges, rotating cookie sheet halfway through baking time.
+               Let sit on baking sheet for 2 minutes after removal from oven and then move to complete cooling on wire rack.
+               Serve as is or ice as desired. Store in airtight container for up to 1 week. </h5></li><br>
+
+        </ul>
+    </div>
+     <div class="row" >
+        <a href="{% url 'parsing_recipe' 7 %}"><button style="float:right;">Save in recipe list</button></a>
+    </div>
+
+</div>
+
+{% endblock %}

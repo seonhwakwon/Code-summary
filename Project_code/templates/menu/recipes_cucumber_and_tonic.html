@@ -1,0 +1,54 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<h1>Cucumber and tonic</h1>
+<div class="container">
+    <div class="row">
+        <img  class="img_fluid" src="{% static '/images/cucumber_and_tonic.jpg'%}" alt="Cucumber and tonic" style="width:100%; height:500px;">
+    </div>
+    <br>
+    <div class="row">
+      <table>
+          <tr>
+              <th>Cooking time: 15minutes </th>
+              <th>serving: 2</th>
+          </tr>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+         <h1 style="text-align:left; text-decoration: underline;">*Ingredient*</h1>
+        <ul>
+
+            <li><h5><1 English cucumber, peeled></h5></li>
+            <li><h5>2 fluid ounces fresh lime juice</h5></li>
+            <li><h5>1 1/2 tablespoons sugar</h5></li>
+            <li><h5>2 cups ice</h5></li>
+            <li><h5>8 fluid ounces tonic water</h5></li>
+            <li><h5>2 slices lime, for serving</h5></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <h1 style="text-align:left; text-decoration: underline;">*Direction*</h1>
+        <br><br>
+        <ul>
+           <li><h5>Step1 :Cut two thin slices from cucumber and set aside for garnish. Chop remaining cucumber
+               into large chunks and place in blender with lime juice and sugar. Blend until smooth. Strain the cucumber
+               mixture through a fine strainer into a jar. You should have about 8 ounces.</h5></li><br>
+
+           <li><h5>Step2 :Fill two glasses with ice. Divide the mixture between the glasses, about 4 ounces each.
+               Top each glass with 4 ounces of tonic water. Garnish with a cucumber and lime slice and serve.</h5></li><br>
+        </ul>
+    </div>
+     <div class="row" >
+        <a href="{% url 'parsing_recipe' 11 %}"><button style="float:right;">Save in recipe list</button></a>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+<div class="container">
+    <table style="width:100%;">
+        <tr>
+            <th>     </th>
+            <th>Title</th>
+            <th>Author </th>
+            <th>Published Date</th>
+        </tr>
+        {%for saved_menu in saved_menus %}
+        <tr>
+            <td>{{saved_menu.number}}</td>
+            <td>{{saved_menu.title}}</td>
+            <td>{{saved_menu.author}} </td>
+            <td>{{saved_menu.published_date}}</td>
+            <td><a href="{% url 'recipes_delete_api' saved_menu.id %}"><button>delete</button></a></td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+{% endblock %}

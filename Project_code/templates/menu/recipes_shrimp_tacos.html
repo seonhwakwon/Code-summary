@@ -1,0 +1,74 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<h1>Shirimp tacos</h1>
+<div class="container">
+    <div class="row">
+        <img  class="img_fluid" src="{% static '/images/shrimp_tacos.jpg'%}" alt="Shrimp tacos" style="width:100%; height:500px;">
+    </div>
+    <br>
+    <div class="row">
+      <table>
+          <tr>
+              <th>Cooking time: 35minutes </th>
+              <th>serving: 4</th>
+          </tr>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+         <h1 style="text-align:left; text-decoration: underline;">*Ingredient*</h1>
+        <ul>
+
+            <li><h5>2 pounds large frozen peeled and deveined shrimp, thawed</h5></li>
+            <li><h5>1 ½ teaspoons chili powder</h5></li>
+            <li><h5>1 teaspoon freshly minced garlic</h5></li>
+            <li><h5>1/2 teaspoon paprika,teaspoon ground cumin,teaspoon onion powder, teaspoon salt</h5></li>
+            <li><h5>1/4 teaspoon ground coriander,teaspoon grated Valencia orange zest, teaspoon garlic powder </h5></li>
+            <li><h5>2 tablespoons olive oil, or more as needed,tablespoons sour cream</h5></li>
+            <li><h5>1 lime, zested and juiced</h5></li>
+            <li><h5>1 teaspoon chopped fresh cilantro</h5></li>
+            <li><h5>1 pinch salt and ground black pepper</h5></li>
+            <li><h5>20 (6 inch) corn tortillas</h5></li>
+            <li><h5>½ bunch fresh cilantro, chopped, or to taste</h5></li>
+            <li><h5>1 jalapeño pepper, diced, or to taste (Optional)</h5></li>
+            <li><h5>2 limes, cut into wedges, or as needed</h5></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <h1 style="text-align:left; text-decoration: underline;">*Direction*</h1>
+        <br><br>
+        <ul>
+           <li><h5>Step1 :Rinse defrosted shrimp under cold water, drain, and pat dry..</h5></li><br>
+
+           <li><h5>Step2 :Combine shrimp, chili powder, garlic, paprika, cumin, onion powder, 1/2 teaspoon salt,
+               1/2 teaspoon black pepper, coriander, and orange zest in a bowl. Mix well.</h5></li><br>
+
+           <li><h5>Step3: Heat olive oil in nonstick frying pan over medium-high heat. Add shrimp and cook
+               until bright pink on the outside and the meat is opaque, 4 to 5 minutes on each side, depending
+               on the size of the shrimp..</h5></li><br>
+
+            <li><h5>Step4: While shrimp cooks, prepare crema by whisking together sour cream, zest and juice of 1 lime,
+               1 teaspoon cilantro, garlic powder, and 1 pinch each of salt and black pepper.</h5></li><br>
+
+            <li><h5>Step5: Heat corn tortillas in either a pan or on a griddle over low heat, 1 to 2 minutes per side.
+                Be careful not to let them burn. Set aside.</h5></li><br>
+
+            <li><h5>Step6: Assemble tacos by spreading 1 teaspoon crema across each tortilla, adding 3 or 4 shrimp,
+                2 slices of avocado, a sprinkle of fresh red onion, cilantro, and jalapeño. Serve with sliced limes
+                to squeeze on top and extra crema on the side.</h5></li><br>
+
+        </ul>
+    </div>
+     <div class="row" >
+        <a href="{% url 'parsing_recipe' 1 %}"><button style="float:right;">Save in recipe list</button></a>
+    </div>
+
+</div>
+
+{% endblock %}

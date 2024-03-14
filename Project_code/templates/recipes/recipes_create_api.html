@@ -1,0 +1,27 @@
+{{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+<div class="container">
+    <table style="width:100%;">
+        <tr>
+            <th>     </th>
+            <th>Title</th>
+            <th>Author </th>
+            <th>Publish Date</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+
+            <td>{{book.0}}</td>
+            <td>{{book.1}}</td>
+            <td>{{book.2}}</td>
+            <td>{{book.3}}</td>
+            <td><a href="{% url 'recipes_create_api' book.0 %}"><button>save</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<br><br>
+{% endblock %}

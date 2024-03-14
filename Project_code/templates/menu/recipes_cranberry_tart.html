@@ -1,0 +1,59 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<h1>Cranberry tart</h1>
+<div class="container">
+    <div class="row">
+        <img  class="img_fluid" src="{% static '/images/cranberry_cheesecake_tart.jpg'%}" alt="Cranberry tart" style="width:100%; height:500px;">
+    </div>
+    <br>
+    <div class="row">
+      <table>
+          <tr>
+              <th>Cooking time: 55minutes</th>
+              <th>serving: 36dozen</th>
+          </tr>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+         <h1 style="text-align:left; text-decoration: underline;">*Ingredient*</h1>
+        <ul>
+
+            <li><h5>1 package (12 ounces) fresh or frozen cranberries, thawed</h5></li>
+            <li><h5>1 cup sugar, divided</h5></li>
+            <li><h5>1/2 cup sliced almonds</h5></li>
+            <li><h5>2 large eggs, room temperature</h5></li>
+            <li><h5>3/4 cup butter, melted</h5></li>
+            <li><h5>1 teaspoon almond extract</h5></li>
+            <li><h5>1 cup all-purpose flour</h5></li>
+            <li><h5>1 tablespoon confectioners' sugar</h5></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <h1 style="text-align:left; text-decoration: underline;">*Direction*</h1>
+        <br><br>
+        <ul>
+           <li><h5>Step1 : In a small bowl, combine the cranberries, 1/2 cup sugar and almonds. Transfer to a greased
+               11-in. fluted tart pan with a removable bottom. Place on a baking sheet.
+        </h5></li><br>
+
+           <li><h5>Step2 : In a small bowl, beat the eggs, butter, extract and remaining sugar. Beat in flour just
+               until moistened (batter will be thick). Spread evenly over berries.</h5></li><br>
+
+           <li><h5>Step3:Bake at 325° for 40 or 45 minutes or until a toothpick inserted in the center comes out clean.
+               Cool in pan on a wire rack. Dust with confectioners’ sugar. Refrigerate leftovers. </h5></li><br>
+        </ul>
+    </div>
+     <div class="row" >
+        <a href="{% url 'parsing_recipe' 6 %}"><button style="float:right;">Save in recipe list</button></a>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<h1>Strawberry matcha latte</h1>
+<div class="container">
+    <div class="row">
+        <img  class="img_fluid" src="{% static '/images/strawberry_matcha_latte.jpg'%}" alt="Strawberry matcha latte" style="width:100%; height:500px;">
+    </div>
+    <br>
+    <div class="row">
+      <table>
+          <tr>
+              <th>Cooking time: 5minutes </th>
+              <th>serving: 1</th>
+          </tr>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+         <h1 style="text-align:left; text-decoration: underline;">*Ingredient*</h1>
+        <ul>
+
+            <li><h5>1 teaspoon matcha powder, ceremonial grade</h5></li>
+            <li><h5>2 oz hot water</h5></li>
+            <li><h5>1 teaspoon liquid sweetener, e.g. agave nectar</h5></li>
+            <li><h5>6 oz milk, dairy or plant-based (I prefer oat milk)</h5></li>
+            <li><h5>ice</h5></li>
+            <li><h5>2-3 medium strawberries</h5></li>
+            <li><h5>2 oz heavy cream</h5></li>
+            <li><h5>1 oz milk</h5></li>
+            <li><h5>1 teaspoon sweetener</h5></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <h1 style="text-align:left; text-decoration: underline;">*Direction*</h1>
+        <br><br>
+        <ul>
+           <li><h5>Step1 :In a small bowl, sift in matcha powder. Pour in hot water and whisk vigorously with a bamboo whisk
+               or milk frother until dissolved and slightly foamy on top. Stir in your sweetener while it's still warm.</h5></li><br>
+
+           <li><h5>Step2 :Fill a glass about ¾ full with ice. Pour in milk and matcha. Stir to combine.</h5></li><br>
+
+           <li><h5>Step3: In a small bullet blender, blend together strawberries, heavy cream, milk, and sweetener for 5-10 seconds
+               until the consistency resembles melted ice cream.</h5></li><br>
+
+            <li><h5>Step4: Pour on top of the matcha latte and give it a gentle stir to blend the layers into a gradient.</h5></li><br>
+        </ul>
+    </div>
+     <div class="row" >
+        <a href="{% url 'parsing_recipe' 9 %}"><button style="float:right;">Save in recipe list</button></a>
+    </div>
+
+
+</div>
+
+{% endblock %}

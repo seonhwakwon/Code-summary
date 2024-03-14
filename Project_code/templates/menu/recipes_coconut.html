@@ -1,0 +1,63 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+<h1>Coconut salmon curry</h1>
+<div class="container">
+    <div class="row">
+        <img  class="img_fluid" src="{% static '/images/coconut_miso_salmon_curry.jpg'%}" alt="Coconut miso salmon curry" style="width:100%; height:400px;">
+    </div>
+    <br>
+    <div class="row">
+      <table>
+          <tr>
+              <th>Cooking time: 25minutes </th>
+              <th>serving: 4</th>
+          </tr>
+      </table>
+    </div>
+    <br>
+    <div class="row">
+         <h1 style="text-align:left; text-decoration: underline;">*Ingredient*</h1>
+        <ul>
+
+            <li><h5>2 Tbs. safflower or canola oil</h5></li>
+            <li><h5>1 medium red onion, halved and sliced 1/2inch thick (about 2 cups)</h5></li>
+            <li><h5>1 (1inch) piece fresh ginger, minced (about 2 Tbs.) (or more)</h5></li>
+            <li><h5>3 garlic cloves, thinly sliced (or more)</h5></li>
+            <li><h5>Kosher salt and black pepper</h5></li>
+            <li><h5>1/4 cup white miso</h5></li>
+            <li><h5>1 can unsweetened coconut milk ( light is O.k.)</h5></li>
+            <li><h5>1 (1 1/2 pound) salmon filet, cut into 2inch pieces</h5></li>
+            <li><h5>5 ounces baby spinach (about 5 packed cups)</h5></li>
+            <li><h5>1 Tbs. fresh lime juice, plus lime wedges for serving</h5></li>
+            <li><h5>Steamed rice, such as jasmine or basmati, for serving</h5></li>
+            <li><h5>1/4 cup chopped fresh basil</h5></li>
+            <li><h5>1/4 cup chopped fresh cilantro</h5></li>
+        </ul>
+
+    </div>
+    <div class="row">
+        <br><br>
+        <h1 style="text-align:left; text-decoration: underline;">*Direction*</h1>
+        <br><br>
+        <ul>
+           <li><h5>Step1 :In a large pot, heat 2 Tbs. oil over medium heat. Add onion, ginger and garlic and season with salt and pepper.
+            Cook, stirring occasionally, until softened, about 3 minutes. Add miso and cook, stirring frequently, until miso is lightly caramelized,
+            about 2 minutes or longer.</h5></li><br>
+
+           <li><h5>Step2 :Add coconut milk and 1 to 1 1/2 cups water and bring to a boil over high heat. Cook until liquid is slightly reduced, about 5 minutes.
+               Stir in salmon, reduce heat to medium-low and simmer gently until just cooked through, about 5 minutes. Turn off heat and stir in spinach and lime juice.</h5></li><br>
+
+           <li><h5>Step3: Divide rice among bowls. Top with salmon curry, basil and cilantro. Serve with lime wedges for squeezing on top.</h5></li><br>
+        </ul>
+    </div>
+    <div class="row" >
+        <a href="{% url 'parsing_recipe' 0 %}"><button style="float:right;">Save in recipe list</button></a>
+    </div>
+
+</div>
+
+
+{% endblock %}

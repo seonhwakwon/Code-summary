@@ -1,0 +1,25 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+
+<div class="container">
+    <table style="width:100%;">
+        <tr>
+            <th>Title</th>
+            <th>Delete </th>
+            <th>Edit</th>
+        </tr>
+        {% for field in recipe %}
+        <tr>
+             <td><a href="{% url 'recipes_detail' field.id %}">{{field.title}}</a></td>
+             <td><a href="{% url 'recipes_delete' field.id %}"><button>Delete</button></a></td>
+             <td><a href="{% url 'recipes_edit' field.id %}"><button>Edit</button></a></td>
+        </tr>
+        {% endfor %}
+     </table>
+
+</div>
+
+{% endblock %}

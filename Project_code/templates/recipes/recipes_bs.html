@@ -1,0 +1,21 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+<div class="container">
+    <table style="width:100%;">
+         <tr>
+            <th>Most Popular Menu</th>
+            <th>Recipe link</th>
+        </tr>
+         {%for key, value in dict_recipes.items %}
+            <tr>
+                <td>{{key}}</td>
+                <td><a href="{{value}}">{{value}}</a></td>
+            </tr>
+         {% endfor %}
+
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'recipes_base.html' %}
+{% load static %}
+
+{% block title %}My Portfolio:Home{% endblock %}
+{% block content %}
+<div class="container">
+    <table>
+         <tr>
+            <th>Image</th>
+            <td>{{recipe.image}}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{recipe.title}}</td>
+        </tr>
+        <tr>
+            <th>Cooking time</th>
+            <td>{{recipe.cooking_time}}</td>
+        </tr>
+        <tr>
+            <th>Serving</th>
+            <td>{{recipe.serving}}</td>
+        </tr>
+        <tr>
+            <th>Ingredient</th>
+            <td>{{recipe.ingredient}}</td>
+        </tr>
+        <tr>
+            <th>Direction</th>
+            <td>{{recipe.direction}}</td>
+        </tr>
+    </table>
+
+        <a href="{% url 'recipes_list' %}"><button style="margin-top:5px;">To the List</button></a>
+</div>
+{% endblock %}
