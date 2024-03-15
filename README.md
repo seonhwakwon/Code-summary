@@ -11,7 +11,7 @@ to collect and aggregate data using Python, Django, SQLite, and JavaScript, and 
 ## Skill learned
 
 In this project, I used Azure Devop, Django, Django rest Framework, Django-bootstrap5, Dajngo-crispy-forms, beautifulsoup4 and requests.<br>
-I have learned a lot of skills through this project, but the most important thing that I have learned is that if I encounter obstacles,<br> 
+I have learned a lot of skills through this project, but the most important thing that I have learned is that if I encounter obstacles,
 I can solve the problem without giving up because I became confident.<br>
 
 
