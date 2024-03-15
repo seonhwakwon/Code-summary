@@ -10,7 +10,7 @@ to collect and aggregate data using Python, Django, SQLite, and JavaScript, and 
 
 ## Skill learned
 
-In this project, I used Azure Devop, Django, Django rest Framework, Django-bootstrap5, Dajgo-crispy-forms, beautifulsoup4 and requests.<br>
+In this project, I used Azure Devop, Django, Django rest Framework, Django-bootstrap5, Dajngo-crispy-forms, beautifulsoup4 and requests.<br>
 I have learned a lot of skills through this project, but the most important thing that I have learned is that if I encounter obstacles,<br> 
 I can solve the problem without giving up because I became confident.<br>
 
@@ -89,7 +89,7 @@ def list(request):
 <img src=https://github.com/seonhwakwon/Code-summary/assets/148311845/6af0295f-ad2c-43f0-9872-f417f3034207 width="400" height="300">
 <br><br>
 
-6. Bs(beautiful soup) fuction parsing the url and dispaly the result(popular recipes and links).
+6. Bs(beautiful soup) function parse the url and display the result(popular recipes and links).
 
 ```python
 def bs(request):
